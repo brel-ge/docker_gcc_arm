@@ -1,2 +1,2 @@
-# docker_coverage
-Docker container with build_essentials and lcov
+# docker_gcc_arm
+Docker container with build_essentials and gcc for arm
