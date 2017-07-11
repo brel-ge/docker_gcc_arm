@@ -22,7 +22,7 @@ RUN apt-get update \
 && rm -rf /var/lib/apt/lists/*  \
 && curl -L ${ARM_SDK_URL} -o /tmp/${ARM_SDK_FILE} \
 && mkdir -p /opt \
-&& cd /opt; tar xjf /tmp/${ARM_SDK_FILE}
+&& cd /opt; tar xjf /tmp/${ARM_SDK_FILE} \
 && wget --post-data="accept_license_agreement=accepted&submit=Download+software" ${JLINK_URL} -O ${JLINK_DEB} \
 && dpkg -i ${JLINK_DEB}
 
