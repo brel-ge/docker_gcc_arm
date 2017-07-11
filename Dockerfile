@@ -18,6 +18,7 @@ RUN apt-get update \
     python \
     bzip2 \
     wget \
+    psmisc \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/*  \
 && curl -L ${ARM_SDK_URL} -o /tmp/${ARM_SDK_FILE} \
