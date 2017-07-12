@@ -1,4 +1,4 @@
-FROM ubuntu:16.10
+FROM ubuntu:17.04
 MAINTAINER Uwe Kaiser <uwe.kaiser@brel.ch>
 
 ENV ARM_SDK_NAME="gcc-arm-none-eabi-6-2017-q2-update"
