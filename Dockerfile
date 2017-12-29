@@ -1,10 +1,9 @@
-FROM ubuntu:17.04
+FROM ubuntu:17.10
 MAINTAINER Uwe Kaiser <uwe.kaiser@brel.ch>
 
-ENV ARM_SDK_NAME="gcc-arm-none-eabi-6-2017-q2-update"
-ENV ARM_SDK_FILE="${ARM_SDK_NAME}-linux.tar.bz2"
-ENV ARM_SDK_URL="https://developer.arm.com/-/media/Files/downloads/gnu-rm/6-2017q2/${ARM_SDK_FILE}"
-ENV JLINK_DEB="JLink_Linux_V616g_x86_64.deb"
+ENV ARM_SDK_NAME="gcc-arm-none-eabi-7-2017-q4-major"
+ENV ARM_SDK_URL="https://developer.arm.com/-/media/Files/downloads/gnu-rm/7-2017q4/${ARM_SDK_FILE}"
+ENV JLINK_DEB="JLink_Linux_V622d_x86_64.deb"
 ENV JLINK_URL="https://www.segger.com/downloads/jlink/${JLINK_DEB}"
 
 RUN apt-get update \
@@ -15,10 +14,11 @@ RUN apt-get update \
     git \
     lcov \
     curl \
-    python \
+    python3 \
     bzip2 \
     wget \
     psmisc \
+    ninja \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/*  \
 && curl -L ${ARM_SDK_URL} -o /tmp/${ARM_SDK_FILE} \
